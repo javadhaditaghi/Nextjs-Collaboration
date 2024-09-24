@@ -1,5 +1,6 @@
 
 import { Typography, Box, Divider } from "@mui/material";
+import { Kanit } from "next/font/google";
 
 
 
@@ -21,7 +22,7 @@ export default function Home() {
     <Typography variant="body1">body 1</Typography>
     <Typography variant="body2">body 2</Typography>
 
-    <Box sx={{ backgroundColor: "primary.main", fontFamily:"Kanit", display:"block" }}>primary.main</Box>
+    <Box typography={"body1"} sx={{ backgroundColor: "primary.main", display:"block" }}>primary.main</Box>
     <Box sx={{ backgroundColor: "secondary.main", fontFamily:"Kanit", display:"block" }}>secondary.main</Box>
     <Box sx={{ backgroundColor: "primary.light", fontFamily:"Kanit", display:"block" }}>primary.light</Box>
     <Box sx={{ backgroundColor: "secondary.light", fontFamily:"Kanit", display:"block" }}>secondary.light</Box>

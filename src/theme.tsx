@@ -1,5 +1,14 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
+import { Kanit } from 'next/font/google';
+
+
+
+const kanit = Kanit({
+  weight: "400", // Verify that '100' is available; otherwise use '400' or another valid weight
+  subsets: ["latin"],
+  display: 'swap'
+});
 
 const theme = createTheme({
   palette: {
@@ -25,7 +34,8 @@ const theme = createTheme({
     divider: '#e5e7eb',     // Gray-200
   },
   typography: {
-    fontFamily: 'Kanit, sans-serif',
+    fontFamily: kanit.style.fontFamily,
+    
     h1: {
       fontSize: '4rem',
       fontWeight: 'bold',
