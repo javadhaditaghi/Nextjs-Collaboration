@@ -1,10 +1,10 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
-import { Kanit } from 'next/font/google';
+import { Hind } from 'next/font/google';
 
 
 
-const kanit = Kanit({
+const hind = Hind({
   weight: "400", // Verify that '100' is available; otherwise use '400' or another valid weight
   subsets: ["latin"],
   display: 'swap'
@@ -13,14 +13,14 @@ const kanit = Kanit({
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#e15381',  // Primary-500
-      light: '#f8d2e1', // Primary-200
-      dark: '#b32346',  // Primary-700
+      main: '#05297F',  // Primary-500
+      light: '#EEF2F5', // Primary-200
+      dark: '#001E67',  // Primary-700
     },
     secondary: {
-      main: '#0d97ea',  // Secondary-500
-      light: '#bae2fd', // Secondary-200
-      dark: '#065186',  // Secondary-600
+      main: '#FC9D9D',  // Secondary-500
+      light: '#FBDADA', // Secondary-200
+      dark: '#EA001B',  // Secondary-600
     },
     background: {
       default: '#FFFFFF',  // White
@@ -34,7 +34,7 @@ const theme = createTheme({
     divider: '#e5e7eb',     // Gray-200
   },
   typography: {
-    fontFamily: kanit.style.fontFamily,
+    fontFamily: hind.style.fontFamily,
     
     h1: {
       fontSize: '4rem',

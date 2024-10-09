@@ -3,9 +3,9 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
 import './globals.css';
 import type { Metadata } from "next";
-import { Kanit } from 'next/font/google';
+import { Hind } from 'next/font/google';
 
-const kanit = Kanit({
+const hind = Hind({
   weight: "400", // Verify that '100' is available; otherwise use '400' or another valid weight
   subsets: ["latin"],
   display: 'swap',
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={kanit.className}>
+    <html lang="en" className={hind.className}>
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
