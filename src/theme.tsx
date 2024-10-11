@@ -46,7 +46,7 @@ const theme = createTheme({
       fontSize: '3rem',
       fontWeight: 'bold',
       lineHeight: '2rem',
-      letterSpacing: '0.035rem',
+      letterSpacing: '0.0351rem',
     },
     h3: {
       fontSize: '2.5rem',
