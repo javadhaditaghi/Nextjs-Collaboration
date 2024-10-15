@@ -6,8 +6,10 @@ import Grid from "@mui/material/Grid2";
 
 const SpecialOffers = () => {
   return (
+
     <Grid>
       <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+      {/* Left side image with text  */}
         <Grid size={6}>
           <Box
             position={"relative"}
@@ -18,12 +20,15 @@ const SpecialOffers = () => {
     
             }}
           >
+            {/* Let Image  */}
             <Image
               src="/assets/images/specialOffer.png"
               alt="Picture of the author"
               layout="fill" 
               objectFit="cover"
             />
+
+            {/* Left side overlay text  */}
             <Box
               sx={{
                 position: "absolute",
@@ -75,6 +80,8 @@ const SpecialOffers = () => {
             </Box>
           </Box>
         </Grid>
+
+      {/* Right side image with text  */}
         <Grid size={6}>
         <Box
             position={"relative"}
@@ -84,12 +91,14 @@ const SpecialOffers = () => {
             height: { xs: 300, md: 400, xl: 450}
             }}
           >
+            {/* Right image  */}
             <Image
               src="/assets/images/specialOffer.png"
               alt="Picture of the author"
               layout="fill" 
               objectFit="cover"
             />
+            {/* Right side overlay text */}
             <Box
               sx={{
                 position: "absolute",
