@@ -2,6 +2,7 @@
 import { Typography, Box, Divider } from "@mui/material";
 import { Kanit } from "next/font/google";
 import SpecialOffers from "@/components/modules/website/home/specialOffers/SpecialOffers";
+import CallToAction from "@/components/modules/website/home/callToAction/CallToAction";
 
 
 
@@ -13,6 +14,9 @@ export default function Home() {
     <>
 
     <SpecialOffers />
+
+
+    <CallToAction />
 
 
     
