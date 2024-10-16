@@ -21,7 +21,7 @@ function MyCarousel() {
     <Swiper
     // install Swiper modules
     modules={[Navigation, Pagination, A11y]}
-  
+    spaceBetween={50}
     slidesPerView={1}
     navigation
     pagination={{ clickable: true }}
@@ -45,6 +45,7 @@ function MyCarousel() {
       width={1920}
       height={2000}
       alt="Picture of the author"
+      
     />
     </SwiperSlide>
     <SwiperSlide>
@@ -57,7 +58,7 @@ function MyCarousel() {
     />
     </SwiperSlide>
     
-    ...
+ 
   </Swiper>
   <Text />
   </>
