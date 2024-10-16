@@ -1,7 +1,8 @@
 //Header
 
 import MyAppBar from "./MyAppBar"
-import Slideshow from "./Slideshow"
+import MyCarousel from "./MyCarousel"
+
 
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
         <>
       
         <MyAppBar />
-        <Slideshow />
+        <MyCarousel />
         </>
     )
 
@@ -18,4 +19,4 @@ const Header = () => {
 }
 
 
-export default Header
+export default Header;
