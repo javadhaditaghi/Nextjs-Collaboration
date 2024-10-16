@@ -13,6 +13,7 @@ import BackHandOutlinedIcon from '@mui/icons-material/BackHandOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useMediaQuery } from '@mui/material'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const MyAppBar: React.FC = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
@@ -34,16 +35,16 @@ const MyAppBar: React.FC = () => {
         {!isMobile && (
           <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
             <Typography variant="h6" sx={{ mx: 2 }}>
-              <a href="/" style={{ color: '#252525', textDecoration: 'none', fontSize:"18px" }}>Home</a>
+            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Home</Link>
             </Typography>
             <Typography variant="h6" sx={{ mx: 2 }}>
-              <a href="/about" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Pages</a>
+            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Pages</Link>
             </Typography>
             <Typography variant="h6" sx={{ mx: 2 }}>
-              <a href="/services" style={{ color: '#252525', textDecoration: 'none', fontSize:"18px" }}>Blog</a>
+            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Blog</Link>
             </Typography>
             <Typography variant="h6" sx={{ mx: 2 }}>
-              <a href="/contact" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Contact</a>
+            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Contact</Link>
             </Typography>
           </Box>
         )}
