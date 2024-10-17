@@ -3,10 +3,11 @@
 import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
 import Grid from "@mui/material/Grid2";
+import LargeButton from "@/components/ui/largeButton";
 
 const CallToAction = () => {
   return (
-    <Grid width={"100%"}>
+    <Grid width={"100%"} sx={{marginBottom:"120px"}}>
       <Box position={"relative"}>
         {/* larger Screens Photo  */}
         <Box sx={{display:{xs: "none", sm:"block"}}}>
@@ -69,18 +70,7 @@ const CallToAction = () => {
           >
             Free shipping worldwide on all baskets over $200
           </Typography>
-          <Button
-            sx={{
-              backgroundColor: "#05297F",
-              textTransform: "uppercase",
-              color: "#ffff",
-              borderRadius: "50px",
-              padding: "9px 18px 7px 18px",
-              fontSize: { xs: "12px", sm: "14px" },
-            }}
-          >
-            Go to Shop
-          </Button>
+          <LargeButton> Go to Shop </LargeButton>
         </Box>
       </Box>
     </Grid>
