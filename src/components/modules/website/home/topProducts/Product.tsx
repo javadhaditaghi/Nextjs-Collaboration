@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Grid from "@mui/material/Grid2";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
@@ -6,29 +5,21 @@ import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { Card, CardContent, Typography, Box, Chip } from "@mui/material";
 import topproductscard from "@/data/data";
-// topproduct is located in data file
+// topproduct array that contains 8 productct feature, is located in data file
 
 export default function Product() {
   return (
-    <Box sx={{ padding: 1 }}>
+    <Box sx={{ padding: 2 }}>
       {/* Responsive Grid */}
-      <Grid container spacing={6}>
+      <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
         {topproductscard.map((product) => (
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            lg={3} // Responsive settings for different screen sizes
-            key={product.id}>
+          <Grid sx={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={product.id}>
             <Card sx={{ height: "420px" }}>
               {" "}
-         
               {/* Product Image */}
               <Box
                 sx={{ position: "relative", height: "250px", width: "100%" }}>
                 {" "}
-               
                 <Image
                   src={product.image}
                   alt={product.title}
@@ -40,7 +31,7 @@ export default function Product() {
                 />
               </Box>
               <CardContent>
-             {/* zara and stars */}
+                {/* zara and stars */}
                 <Grid container alignItems="center">
                   <Grid item>
                     <Box sx={{ display: "flex", alignItems: "center" }}>
