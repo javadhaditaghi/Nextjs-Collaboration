@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Box, Container, Divider, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
-
 const Footer = () => {
   return (
     //  footer has a Container mui component & 2 child of Grid component.
@@ -33,7 +32,12 @@ const Footer = () => {
           <Grid id="about" size={{ xs: 12, sm: 6, lg: 3 }}>
             <Box>
               <Link href="/">
-                <Image src="/assets/images/icons/logo.png" alt="logo-icon" height={59} width={138} />
+                <Image
+                  src="/assets/images/icons/logo.png"
+                  alt="logo-icon"
+                  height={59}
+                  width={138}
+                />
               </Link>
             </Box>
             <Box
@@ -45,7 +49,12 @@ const Footer = () => {
               }}
             >
               <Box>
-                <Image src="/assets/images/icons/phone.png" alt="phone-icon" width={41} height={41} />
+                <Image
+                  src="/assets/images/icons/phone.png"
+                  alt="phone-icon"
+                  width={41}
+                  height={41}
+                />
               </Box>
               <Box>
                 <Typography
@@ -86,7 +95,12 @@ const Footer = () => {
             <Grid container>
               {/* all box component has height & width, because img of icon are not 1:1 (size) & the middle box element has margin for spacing */}
               <Box sx={{ height: "20px", width: "20px" }}>
-                <Image src="/assets/images/icons/instagram.png" alt="instagram-icon" width={18} height={19}/>
+                <Image
+                  src="/assets/images/icons/instagram.png"
+                  alt="instagram-icon"
+                  width={18}
+                  height={19}
+                />
               </Box>
               <Box
                 sx={{
@@ -96,10 +110,20 @@ const Footer = () => {
                   marginX: "30px",
                 }}
               >
-                <Image src="/assets/images/icons/twitter.png" alt="twitter-icon" width={20} height={17} />
+                <Image
+                  src="/assets/images/icons/twitter.png"
+                  alt="twitter-icon"
+                  width={20}
+                  height={17}
+                />
               </Box>
               <Box sx={{ height: "20px", width: "20px" }}>
-                <Image src="/assets/images/icons/facebook.png" alt="facebook-icon" width={11} height={21} />
+                <Image
+                  src="/assets/images/icons/facebook.png"
+                  alt="facebook-icon"
+                  width={11}
+                  height={21}
+                />
               </Box>
             </Grid>
           </Grid>
@@ -317,16 +341,36 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: "flex", marginTop: "20px", gap: "20px" }}>
               <Box>
-                <Image src="/assets/images/icons/credit-card-visa.png" alt="credit-card-visa-icon" width={50} height={50} />
+                <Image
+                  src="/assets/images/icons/credit-card-visa.png"
+                  alt="credit-card-visa-icon"
+                  width={50}
+                  height={50}
+                />
               </Box>
               <Box>
-                <Image src="/assets/images/icons/paypal.png" alt="papal-icon" width={50} height={50}/>
+                <Image
+                  src="/assets/images/icons/paypal.png"
+                  alt="papal-icon"
+                  width={50}
+                  height={50}
+                />
               </Box>
               <Box>
-                <Image src="/assets/images/icons/american-express.png" alt="american-express-icon" width={50} height={50}/>
+                <Image
+                  src="/assets/images/icons/american-express.png"
+                  alt="american-express-icon"
+                  width={50}
+                  height={50}
+                />
               </Box>
               <Box>
-                <Image src="/assets/images/icons/maestro.png" alt="maestro-icon" width={50} height={50}/>
+                <Image
+                  src="/assets/images/icons/maestro.png"
+                  alt="maestro-icon"
+                  width={50}
+                  height={50}
+                />
               </Box>
             </Box>
           </Grid>
