@@ -1,9 +1,9 @@
-import { Box, Typography, Button } from "@mui/material";
-import Image from "next/image";
-import Grid from "@mui/material/Grid2";
-import { Children } from "react";
+import { Button } from "@mui/material";
+;
 
 const LargeButton = ({ children }: { children: string }) => {
+
+  {/* Largge buttons on index sections like call  to action and about us parts of it  */}
   return (
     <Button
       sx={{
