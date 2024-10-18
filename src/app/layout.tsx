@@ -6,9 +6,10 @@ import type { Metadata } from "next";
 import { Hind } from 'next/font/google';
 
 const hind = Hind({
-  weight: "400", // Verify that '100' is available; otherwise use '400' or another valid weight
+  weight: ["300", "400", "500", "600", "700"], // Verify that '100' is available; otherwise use '400' or another valid weight
   subsets: ["latin"],
   display: 'swap',
+  // adjustFontFallback: false
 });
 
 export const metadata: Metadata = {

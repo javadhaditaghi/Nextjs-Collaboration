@@ -7,7 +7,8 @@ import { Hind } from 'next/font/google';
 const hind = Hind({
   weight: "400", // Verify that '100' is available; otherwise use '400' or another valid weight
   subsets: ["latin"],
-  display: 'swap'
+  display: 'swap',
+  adjustFontFallback: false
 });
 
 const theme = createTheme({
