@@ -4,6 +4,7 @@ import theme from '../theme';
 import './globals.css';
 import type { Metadata } from "next";
 import { Hind } from 'next/font/google';
+import Footer from '@/components/modules/website/footer/Footer';
 
 const hind = Hind({
   weight: "400", // Verify that '100' is available; otherwise use '400' or another valid weight
@@ -27,6 +28,7 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             {children}
+            <Footer/>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

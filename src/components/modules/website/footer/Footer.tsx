@@ -3,15 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Box, Container, Divider, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import Phone from "../../../../../public/assets/images/icons/phone.png";
-import Logo from "../../../../../public/assets/images/icons/logo.png";
-import Instagram from "../../../../../public/assets/images/icons/instagram.png";
-import Twitter from "../../../../../public/assets/images/icons/twitter.png";
-import Facebook from "../../../../../public/assets/images/icons/facebook.png";
-import Paypal from "../../../../../public/assets/images/icons/paypal.png";
-import American from "../../../../../public/assets/images/icons/american-express.png";
-import Visa from "../../../../../public/assets/images/icons/credit-card-visa.png";
-import Maestro from "../../../../../public/assets/images/icons/maestro.png";
+
 
 const Footer = () => {
   return (
@@ -41,7 +33,7 @@ const Footer = () => {
           <Grid id="about" size={{ xs: 12, sm: 6, lg: 3 }}>
             <Box>
               <Link href="/">
-                <Image src={Logo} alt="logo-icon" />
+                <Image src="/assets/images/icons/logo.png" alt="logo-icon" height={59} width={138} />
               </Link>
             </Box>
             <Box
@@ -53,7 +45,7 @@ const Footer = () => {
               }}
             >
               <Box>
-                <Image src={Phone} alt="phone-icon" />
+                <Image src="/assets/images/icons/phone.png" alt="phone-icon" width={41} height={41} />
               </Box>
               <Box>
                 <Typography
@@ -94,7 +86,7 @@ const Footer = () => {
             <Grid container>
               {/* all box component has height & width, because img of icon are not 1:1 (size) & the middle box element has margin for spacing */}
               <Box sx={{ height: "20px", width: "20px" }}>
-                <Image src={Instagram} alt="instagram-icon" />
+                <Image src="/assets/images/icons/instagram.png" alt="instagram-icon" width={18} height={19}/>
               </Box>
               <Box
                 sx={{
@@ -104,10 +96,10 @@ const Footer = () => {
                   marginX: "30px",
                 }}
               >
-                <Image src={Twitter} alt="twitter-icon" />
+                <Image src="/assets/images/icons/twitter.png" alt="twitter-icon" width={20} height={17} />
               </Box>
               <Box sx={{ height: "20px", width: "20px" }}>
-                <Image src={Facebook} alt="facebook-icon" />
+                <Image src="/assets/images/icons/facebook.png" alt="facebook-icon" width={11} height={21} />
               </Box>
             </Grid>
           </Grid>
@@ -325,16 +317,16 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: "flex", marginTop: "20px", gap: "20px" }}>
               <Box>
-                <Image src={Visa} alt="credit-card-visa-icon" />
+                <Image src="/assets/images/icons/credit-card-visa.png" alt="credit-card-visa-icon" width={50} height={50} />
               </Box>
               <Box>
-                <Image src={Paypal} alt="papal-icon" />
+                <Image src="/assets/images/icons/paypal.png" alt="papal-icon" width={50} height={50}/>
               </Box>
               <Box>
-                <Image src={American} alt="american-express-icon" />
+                <Image src="/assets/images/icons/american-express.png" alt="american-express-icon" width={50} height={50}/>
               </Box>
               <Box>
-                <Image src={Maestro} alt="maestro-icon" />
+                <Image src="/assets/images/icons/maestro.png" alt="maestro-icon" width={50} height={50}/>
               </Box>
             </Box>
           </Grid>
