@@ -26,4 +26,37 @@ body {
   }
 }
 
+.title{
+    
+  font-family: Hind;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 80px;;
+}
+/* button in text component */
+.button{
+  width: 168px;
+height: 48px;
+flex-shrink: 0;
+border-radius: 50px;
+background: #05297F;
+color: #FFF;
+font-family: Hind;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px; /* 100% */
+
+}
+.swiper-button-prev {
+  color: #c4c4c4!important;
+}
+.swiper-button-next{
+  color: #c4c4c4!important;
+}
+.swiper-pagination-bullet-active{
+  background-color: #FC9D9D !important;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
