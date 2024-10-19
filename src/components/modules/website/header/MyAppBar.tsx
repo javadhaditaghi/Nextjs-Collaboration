@@ -19,21 +19,24 @@ const MyAppBar: React.FC = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   return (
-    <AppBar position="static" sx={{background:"#FFF",boxShadow:" 0px 4px 20px 0px rgba(48, 57, 96, 0.15)"}}>
+    <AppBar  position="static" sx={{width:"100%",background:"#FFF",boxShadow:" 0px 4px 20px 0px rgba(48, 57, 96, 0.15)"}}>
       <Toolbar>
         {/* Left Side: Logo */}
-        <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+        <Box sx={{  display: 'flex', justifyContent:"space-between" }}>
         <Image
       src="/assets/images/logo.jpg"
       width={50}
       height={50}
       alt="Picture of the author"
+    
     />
+    <Typography sx={{ mx:2,fontSize:"30px",fontStyle:"italic",color:"black", fontWeight: "800"}}>Trali</Typography>
+
         </Box>
 
         {/* Middle: Links */}
         {!isMobile && (
-          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center'}}>
             <Typography variant="h6" sx={{ mx: 2 }}>
             <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Home</Link>
             </Typography>

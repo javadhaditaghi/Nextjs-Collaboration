@@ -2,25 +2,42 @@ import { Translate } from '@mui/icons-material'
 import { Box, Typography } from '@mui/material'
 
 
-
 function Text() {
   return (
-   <>
-   <Box display='flex' justifyContent="center" alignItems="center" height="100%" position="absolute" top="50%" 
- sx={{ textAlign: 'center', zIndex: 1}}
-    >
-    <Typography sx={{fontSize:"60px",color:"#05297F"}}>
-    End of Season Clearance
-Sale upto 30%
+   
+    < Box sx={{ textAlign:"left", position:"sticky"}}>
+     <ul >
+      <li>
+         <Typography fontSize={20} color='#05297F' marginBottom="15px"  >
+        Stoke is limited
+       </Typography>
+       </li>
+      <li>
+        <Typography  sx={{fontWeight:"700",lineHeight:"80px",fontSize:"50px",color:"#252525"}}>
+       End of Season Clearance
+       </Typography>
+       </li>
+      <li> 
+        <Typography sx={{ marginBottom:"15px", fontWeight:"700", lineHeight:"80px", width:"100%",fontSize:"50px",color:"#252525"}}>
+       Sale upto 30%
+       </Typography>
+       </li>
+       <li> 
+         <button className='button'>shop now</button>
+         </li>
+     </ul>
+  
+      
+      
+      
+     
 
-    </Typography>
-    <Typography>
-        
-    </Typography>
-    <button className='button'>shop now</button>
-   </Box>
-   </>
+
+      </Box>
+
+   
   )
 }
 
-export default Text
+export default Text;
+
