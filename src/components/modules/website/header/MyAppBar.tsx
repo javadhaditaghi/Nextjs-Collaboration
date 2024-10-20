@@ -22,7 +22,7 @@ const MyAppBar: React.FC = () => {
     <AppBar  position="static" sx={{width:"100%",background:"#FFF",boxShadow:" 0px 4px 20px 0px rgba(48, 57, 96, 0.15)"}}>
       <Toolbar>
         {/* Left Side: Logo */}
-        <Box sx={{  display: 'flex', justifyContent:"space-between" }}>
+        <Box sx={{  display: 'flex', justifyContent:"space-between",paddingLeft:"200px" }}>
         <Image
       src="/assets/images/logo.jpg"
       width={50}
@@ -30,41 +30,41 @@ const MyAppBar: React.FC = () => {
       alt="Picture of the author"
     
     />
-    <Typography sx={{ mx:2,fontSize:"30px",fontStyle:"italic",color:"black", fontWeight: "800"}}>Trali</Typography>
+    <Typography sx={{ xs:"none", sm:"none", mx:2,fontSize:"30px",fontStyle:"italic",color:"black", fontWeight: "800"}}>Trali</Typography>
 
         </Box>
 
         {/* Middle: Links */}
         {!isMobile && (
           <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center'}}>
-            <Typography variant="h6" sx={{ mx: 2 }}>
-            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Home</Link>
+            <Typography variant="h6" sx={{ mx: 4}}>
+            <Link href="/" style={{ color: '#05297F', textDecoration: 'none',fontSize:"18px" }}>Home</Link>
             </Typography>
-            <Typography variant="h6" sx={{ mx: 2 }}>
+            <Typography variant="h6" sx={{ mx: 4 }}>
             <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Pages</Link>
             </Typography>
-            <Typography variant="h6" sx={{ mx: 2 }}>
+            <Typography variant="h6" sx={{ mx: 4 }}>
             <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Blog</Link>
             </Typography>
-            <Typography variant="h6" sx={{ mx: 2 }}>
+            <Typography variant="h6" sx={{ mx: 4 }}>
             <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Contact</Link>
             </Typography>
           </Box>
         )}
 
         {/* Right Side: Icons */}
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', paddingRight:"200px" }}>
           <IconButton aria-label="home">
             <AccountCircleOutlinedIcon sx={{width:"24px", height:"24px"}}  />
           </IconButton>
           <IconButton  aria-label="about">
-            <FavoriteBorderOutlinedIcon />
+            <FavoriteBorderOutlinedIcon sx={{width:"24px", height:"24px"}} />
           </IconButton>
           <IconButton  aria-label="contact">
-            <BackHandOutlinedIcon />
+            <BackHandOutlinedIcon sx={{width:"24px", height:"24px"}} />
           </IconButton>
           <IconButton  aria-label="search">
-            <ShoppingCartOutlinedIcon />
+            <ShoppingCartOutlinedIcon sx={{width:"24px", height:"24px"}} />
           </IconButton>
         </Box>
       </Toolbar>
