@@ -5,14 +5,15 @@ import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { Card, CardContent, Typography, Box, Chip } from "@mui/material";
 import topproductscard from "@/data/data";
+import {TopProduct} from "@/data/typetopcard"
 // topproduct array that contains 8 productct feature, is located in data file
 
 export default function Product() {
   return (
     <Box sx={{ padding: 2 }}>
       {/* Responsive Grid */}
-      <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
-        {topproductscard.map((product) => (
+      <Grid container spacing={4}>
+        {topproductscard.map((product: TopProduct) => (
           <Grid sx={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={product.id}>
             <Card sx={{ height: "420px" }}>
               {" "}
@@ -33,18 +34,22 @@ export default function Product() {
               <CardContent>
                 {/* zara and stars */}
                 <Grid container alignItems="center">
-                  <Grid item>
+                  <Grid>
                     <Box sx={{ display: "flex", alignItems: "center" }}>
-                      {/* Full Stars */}
-                      <StarIcon sx={{ color: "#FFBD69" }} />
-                      <StarIcon sx={{ color: "#FFBD69" }} />
-                      <StarIcon sx={{ color: "#FFBD69" }} />
-                      <StarIcon sx={{ color: "#FFBD69" }} />
-                      {/* Empty Star */}
-                      <StarBorderIcon sx={{ color: "#FFBD69" }} />
+                      {[...Array(5)].map((_, index) =>
+                        index < 4 ? ( 
+                          <StarIcon key={index} sx={{ color: "#FFBD69" }} />//setare por 4
+                        ) : (
+                          
+                          <StarBorderIcon
+                            key={index}
+                            sx={{ color: "#FFBD69" }}//setare khali 1
+                          />
+                        )
+                      )}
                     </Box>
                   </Grid>
-                  <Grid item>
+                  <Grid>
                     <Typography
                       variant="h6"
                       sx={{
@@ -53,7 +58,7 @@ export default function Product() {
                         fontSize: "14px",
                         fontWeight: 300,
                       }}>
-                      Zara
+                      {product.brand}
                     </Typography>
                   </Grid>
                 </Grid>

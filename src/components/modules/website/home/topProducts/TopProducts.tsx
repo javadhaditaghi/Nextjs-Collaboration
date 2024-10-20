@@ -4,19 +4,19 @@ import Grid from "@mui/material/Grid2";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import Product from "./Product";
-// whole page title navbar and 8 cards and product compnent write in product file 
+// whole page title navbar and 8 cards and product compnent write in product file
 export default function TopProducts() {
   return (
-    <Box sx={{ padding: { xs: 2, sm: 4 } }}>
-    
+    <Grid  sx={{ padding: { xs: 2, sm: 6 }}}>
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          mb: 4,
+          mb: 4
+          
         }}>
-      {/* title */}
+        {/* title */}
         <Typography
           variant="h4"
           fontWeight={700}
@@ -25,7 +25,7 @@ export default function TopProducts() {
           Top Products
         </Typography>
 
-      {/* navbar has color bullets */}
+        {/* navbar has color bullets */}
         <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 4, mr: 7 }}>
           <Link href="/all" passHref>
             <Box
@@ -35,7 +35,6 @@ export default function TopProducts() {
                 position: "relative",
                 cursor: "pointer",
               }}>
-
               <Box
                 sx={{
                   width: 5,
@@ -132,14 +131,12 @@ export default function TopProducts() {
         </Box>
       </Box>
 
-     {/* 8 card */}
+      {/* 8 card */}
       <Grid container spacing={2}>
-     
-        <Grid sx={{xs:12,sm:6,md:3,lg:3}} >
+        <Grid sx={{ xs: 12, sm: 6, md: 3, lg: 3 }}>
           <Product />
         </Grid>
-       
       </Grid>
-    </Box>
+    </Grid>
   );
 }
