@@ -1,4 +1,4 @@
-
+import SignupNewsletters from "@/components/modules/website/home/signupNewsletters/SignupNewsletters";
 import { Typography, Box, Divider } from "@mui/material";
 import { Kanit } from "next/font/google";
 
@@ -29,7 +29,7 @@ export default function Home() {
     <Box sx={{ backgroundColor: "primary.dark", fontFamily:"Kanit", display:"block" }}>primary.dark</Box>
     <Box sx={{ backgroundColor: "secondary.dark", fontFamily:"Kanit", display:"block" }}>secondary.dark</Box>
     
-
+<SignupNewsletters/>
    </>
     
   );
