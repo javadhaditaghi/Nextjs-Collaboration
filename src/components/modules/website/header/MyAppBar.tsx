@@ -28,7 +28,7 @@ const MyAppBar: React.FC = () => {
     
     <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }} >
     <div>
-    <Typography sx={{ mx:2,fontSize:"30px",fontStyle:"italic",color:"#001138", fontWeight: "800", fontFamily:"Montserrat",lineHeightL:"36px"}}>Trali</Typography>
+    <Typography sx={{ mx:2,fontSize:"30px",fontStyle:"italic",color:"#001138", fontWeight: "800", fontFamily:"Hind, sans-serif",lineHeightL:"36px"}}>Trali</Typography>
     </div>
     <div>
     <Typography sx={{  mx:2,fontSize:"12px",color:"#767676", fontWeight: "400",lineHeight:"14px"}}>wear store</Typography>
@@ -40,16 +40,16 @@ const MyAppBar: React.FC = () => {
         {!isMobile && (
           <Box sx={{flexGrow: 1, display: 'flex', justifyContent: 'center'}}>
             <Typography variant="h6" sx={{ mx: 4}}>
-            <Link href="/" style={{ color: '#05297F', textDecoration: 'none',fontSize:"18px" }}>Home</Link>
+            <Link href="/" style={{ color: '#05297F', textDecoration: 'none',fontSize:"18px",fontFamily: 'Hind, sans-serif',fontWeight:"700" }}>HOME</Link>
             </Typography>
             <Typography variant="h6" sx={{ mx: 4 }}>
-            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Pages</Link>
+            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px",fontFamily: 'Hind, sans-serif',fontWeight:"700"  }}>PAGES</Link>
             </Typography>
             <Typography variant="h6" sx={{ mx: 4 }}>
-            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Blog</Link>
+            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px",fontFamily: 'Hind, sans-serif',fontWeight:"700"  }}>BLOG</Link>
             </Typography>
             <Typography variant="h6" sx={{ mx: 4 }}>
-            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px" }}>Contact</Link>
+            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px",fontFamily: 'Hind, sans-serif',fontWeight:"700"  }}>CONTACT</Link>
             </Typography>
           </Box>
         )}
