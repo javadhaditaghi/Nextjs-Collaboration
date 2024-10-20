@@ -1,5 +1,6 @@
 import { Translate } from '@mui/icons-material'
-import { Box, Typography } from '@mui/material'
+import { Box,Typography } from '@mui/material';
+
 
 
 function Text() {
@@ -26,6 +27,7 @@ function Text() {
          <button className='button'>shop now</button>
          </li>
      </ul>
+
   
       
       

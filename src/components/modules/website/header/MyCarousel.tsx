@@ -18,7 +18,7 @@ import { Box } from '@mui/material';
 
 function MyCarousel() {
   return (
-    <Box sx={{ xs: "400px", sm: "600px", md: "800px", lg: "900px",width:"100%"}}>
+    <Box sx={{  xs: "400px", sm: "600px", md: "800px", lg: "900px",width:"100%"}}>
     <Swiper
     // install Swiper modules
     modules={[Navigation, Pagination, A11y]}
