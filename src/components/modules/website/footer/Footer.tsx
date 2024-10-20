@@ -3,7 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Box, Container, Divider, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-
+import {
+  getInTouchItems,
+  categoriesItem,
+  paymentMethodItem,
+  socialsItem,
+} from "@/constants/constants";
 const Footer = () => {
   return (
     //  footer has a Container mui component & 2 child of Grid component.
@@ -26,14 +31,19 @@ const Footer = () => {
           rowGap={{ xs: 8, lg: 6 }}
           display="flex"
           alignContent="center"
-          sx={{ marginTop: "98px", marginBottom: "88px", marginX: "auto" }}
+          sx={{
+            marginTop: "98px",
+            marginBottom: "88px",
+            marginX: "auto",
+            paddingX: "30px",
+          }}
         >
           {/* 1-1 About Grid , it has logo, phone information and socials */}
           <Grid id="about" size={{ xs: 12, sm: 6, lg: 3 }}>
             <Box>
               <Link href="/">
                 <Image
-                  src="/assets/images/icons/logo.png"
+                  src="/assets/images/icons/logo-trali.png"
                   alt="logo-icon"
                   height={59}
                   width={138}
@@ -50,7 +60,7 @@ const Footer = () => {
             >
               <Box>
                 <Image
-                  src="/assets/images/icons/phone.png"
+                  src="/assets/images/icons/phone-i.png"
                   alt="phone-icon"
                   width={41}
                   height={41}
@@ -67,17 +77,19 @@ const Footer = () => {
                 >
                   CALL US FREE
                 </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "24px",
-                    fontStyle: "normal",
-                    fontWeight: "600",
-                    lineHeight: "24px",
-                  }}
-                >
-                  {" "}
-                  +1 800 6565 222
-                </Typography>
+                <Link href="tel:+18006565222">
+                  <Typography
+                    sx={{
+                      fontSize: "24px",
+                      fontStyle: "normal",
+                      fontWeight: "600",
+                      lineHeight: "24px",
+                    }}
+                  >
+                    {" "}
+                    +1 800 6565 222
+                  </Typography>
+                </Link>
               </Box>
             </Box>
             <Typography
@@ -92,39 +104,24 @@ const Footer = () => {
             >
               Mon-Sun: 9:00am - 9:00pm
             </Typography>
-            <Grid container>
+            <Grid container sx={{ display: "flex", gap: "30px" }}>
               {/* all box component has height & width, because img of icon are not 1:1 (size) & the middle box element has margin for spacing */}
-              <Box sx={{ height: "20px", width: "20px" }}>
-                <Image
-                  src="/assets/images/icons/instagram.png"
-                  alt="instagram-icon"
-                  width={18}
-                  height={19}
-                />
-              </Box>
-              <Box
-                sx={{
-                  height: "20px",
-                  width: "20px",
-                  alignContent: "center",
-                  marginX: "30px",
-                }}
-              >
-                <Image
-                  src="/assets/images/icons/twitter.png"
-                  alt="twitter-icon"
-                  width={20}
-                  height={17}
-                />
-              </Box>
-              <Box sx={{ height: "20px", width: "20px" }}>
-                <Image
-                  src="/assets/images/icons/facebook.png"
-                  alt="facebook-icon"
-                  width={11}
-                  height={21}
-                />
-              </Box>
+
+              {socialsItem.map((social) => (
+                <Box
+                  key={social.id}
+                  sx={{ height: "20px", width: "20px", alignContent: "center" }}
+                >
+                  <Link href={social.href} target="_blank">
+                    <Image
+                      src={social.src}
+                      alt={social.alt}
+                      width={social.width}
+                      height={social.height}
+                    />
+                  </Link>
+                </Box>
+              ))}
             </Grid>
           </Grid>
           {/* 1-2 Get in touch Grid , it has ul & 5 li links , all same */}
@@ -154,76 +151,22 @@ const Footer = () => {
                 gap: "5px",
               }}
             >
-              <li>
-                <Link href="#">
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: "300",
-                      lineHeight: "24px",
-                    }}
-                  >
-                    Delivery Information
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href="#">
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: "300",
-                      lineHeight: "24px",
-                    }}
-                  >
-                    Discount
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href="#">
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: "300",
-                      lineHeight: "24px",
-                    }}
-                  >
-                    100% Purchase Protection
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href="#">
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: "300",
-                      lineHeight: "24px",
-                    }}
-                  >
-                    Returns Centre
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href="#">
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: "300",
-                      lineHeight: "24px",
-                    }}
-                  >
-                    Your Account
-                  </Typography>
-                </Link>
-              </li>
+              {getInTouchItems.map((item) => (
+                <li key={item.id}>
+                  <Link href={item.href} target="_blank">
+                    <Typography
+                      sx={{
+                        fontSize: "18px",
+                        fontStyle: "normal",
+                        fontWeight: "300",
+                        lineHeight: "24px",
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                  </Link>
+                </li>
+              ))}
             </Box>
           </Grid>
           {/* 1-3 Categories Grid , it has ul & 5 li links , all same */}
@@ -254,76 +197,22 @@ const Footer = () => {
                 gap: "5px",
               }}
             >
-              <li>
-                <Link href="">
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: "300",
-                      lineHeight: "24px",
-                    }}
-                  >
-                    Woman
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href="">
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: "300",
-                      lineHeight: "24px",
-                    }}
-                  >
-                    Men
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href="">
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: "300",
-                      lineHeight: "24px",
-                    }}
-                  >
-                    Accessories
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href="">
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: "300",
-                      lineHeight: "24px",
-                    }}
-                  >
-                    Sport Shoes
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href="">
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: "300",
-                      lineHeight: "24px",
-                    }}
-                  >
-                    Clothes
-                  </Typography>
-                </Link>
-              </li>
+              {categoriesItem.map((category) => (
+                <li key={category.id}>
+                  <Link href={category.href} target="_blank">
+                    <Typography
+                      sx={{
+                        fontSize: "18px",
+                        fontStyle: "normal",
+                        fontWeight: "300",
+                        lineHeight: "24px",
+                      }}
+                    >
+                      {category.title}
+                    </Typography>
+                  </Link>
+                </li>
+              ))}
             </Box>
           </Grid>
           {/* 1-4 Payments Grid , it has 4 box for img , all same */}
@@ -340,38 +229,18 @@ const Footer = () => {
               Payment Method
             </Typography>
             <Box sx={{ display: "flex", marginTop: "20px", gap: "20px" }}>
-              <Box>
-                <Image
-                  src="/assets/images/icons/credit-card-visa.png"
-                  alt="credit-card-visa-icon"
-                  width={50}
-                  height={50}
-                />
-              </Box>
-              <Box>
-                <Image
-                  src="/assets/images/icons/paypal.png"
-                  alt="papal-icon"
-                  width={50}
-                  height={50}
-                />
-              </Box>
-              <Box>
-                <Image
-                  src="/assets/images/icons/american-express.png"
-                  alt="american-express-icon"
-                  width={50}
-                  height={50}
-                />
-              </Box>
-              <Box>
-                <Image
-                  src="/assets/images/icons/maestro.png"
-                  alt="maestro-icon"
-                  width={50}
-                  height={50}
-                />
-              </Box>
+              {paymentMethodItem.map((method) => (
+                <Box key={method.id}>
+                  <Link href={method.href} target="_blank">
+                    <Image
+                      src={method.src}
+                      alt={method.alt}
+                      width={50}
+                      height={50}
+                    />
+                  </Link>
+                </Box>
+              ))}
             </Box>
           </Grid>
         </Grid>
@@ -381,13 +250,17 @@ const Footer = () => {
       {/* 2- Start second child of container, that is just for background */}
       <Grid
         container
-        sx={{ backgroundColor: "primary.light", minHeight: "100px" }}
+        sx={{
+          backgroundColor: "primary.light",
+          minHeight: "100px",
+          paddingX: "30px",
+        }}
       >
         {/* Grid of contents, - it has two Grid child - Copyrights & Menu  */}
         <Grid
           container
           size={10}
-          columnSpacing={12}
+          columnSpacing={22}
           display="flex"
           alignContent="center"
           sx={{ marginX: "auto" }}
