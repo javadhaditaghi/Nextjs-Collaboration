@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default:"TraliShop",
     template:"TraliShop|%s"
   },
-  description: "Modern stylist wear store",
+  description: "Modern stylist wear store!",
 };
 
 export default function RootLayout({
