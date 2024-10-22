@@ -1,63 +1,118 @@
 
 "use client"; 
 
-import React from 'react';
+import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { Box } from '@mui/material';
-import { useMediaQuery } from '@mui/material'
-import Image from 'next/image'
-import Link from 'next/link'
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
+import Image from 'next/image';
 
-const MyAppBar: React.FC = () => {
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+const pages = ['home', 'page', 'Blog', "contact"];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+function MyAppBar() {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   return (
-    <AppBar  position="static" sx={{width:"100%",background:"#FFF",boxShadow:" 0px 4px 20px 0px rgba(48, 57, 96, 0.15)"}}>
-      <Toolbar>
-        {/* Left Side: Logo */}
+     <AppBar position="static" sx={{width:"100%",background:"#FFF",boxShadow:" 0px 4px 20px 0px rgba(48, 57, 96, 0.15)"}}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+
         <Box sx={{  display: 'flex', justifyContent:"space-between",paddingLeft:"200px" }}>
-        <Image
-      src="/assets/images/logo.jpg"
+          <Image    src="/assets/images/logo.jpg"
       width={50}
       height={50}
-      alt="Picture of the author"
-    
-    />
-    
-    <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }} >
+      alt="Picture of the author" 
+      sx={{  display: { xs: 'none', md: 'flex' }, mr: 1}} />
+          <Box sx={{display: { xs: 'none', sm: 'none', md: 'block' } }} >
     <div>
     <Typography sx={{ mx:2,fontSize:"30px",fontStyle:"italic",color:"#001138", fontWeight: "800", fontFamily:"Hind, sans-serif",lineHeightL:"36px"}}>Trali</Typography>
     </div>
     <div>
-    <Typography sx={{  mx:2,fontSize:"12px",color:"#767676", fontWeight: "400",lineHeight:"14px"}}>wear store</Typography>
+    <Typography sx={{  mx:2,fontSize:"12px",color:"#767676", fontWeight: "400",lineHeight:"14px",fontFamily:"Hind, sans-serif"}}>wear store</Typography>
     </div>
     </Box>
-        </Box>
+    </Box>
 
-        {/* Middle: Links */}
-        {!isMobile && (
-          <Box sx={{flexGrow: 1, display: 'flex', justifyContent: 'center'}}>
-            <Typography variant="h6" sx={{ mx: 4}}>
-            <Link href="/" style={{ color: '#05297F', textDecoration: 'none',fontSize:"18px",fontFamily: 'Hind, sans-serif',fontWeight:"700" }}>HOME</Link>
-            </Typography>
-            <Typography variant="h6" sx={{ mx: 4 }}>
-            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px",fontFamily: 'Hind, sans-serif',fontWeight:"700"  }}>PAGES</Link>
-            </Typography>
-            <Typography variant="h6" sx={{ mx: 4 }}>
-            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px",fontFamily: 'Hind, sans-serif',fontWeight:"700"  }}>BLOG</Link>
-            </Typography>
-            <Typography variant="h6" sx={{ mx: 4 }}>
-            <Link href="/" style={{ color: '#252525', textDecoration: 'none',fontSize:"18px",fontFamily: 'Hind, sans-serif',fontWeight:"700"  }}>CONTACT</Link>
-            </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="black"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{ display: { xs: 'block', md: 'none' } }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography sx={{ textAlign:"center" }}>{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
           </Box>
-        )}
-
-        {/* Right Side: Icons */}
-        <Box sx={{display: 'flex', paddingRight:"200px",gap:"15px" }}>
+          
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "#252525", display: 'block', textDecoration: 'none',fontSize:"18px",fontFamily: 'Hind, sans-serif',fontWeight:"700",marginLeft:"70px"
+              }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Box sx={{ paddingRight:"200px",gap:"15px",display: { xs: 'none', md: 'flex' } }}>
      
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
 <g clip-path="url(#clip0_152_9162)">
 <path d="M12.5 0C5.60762 0 0 5.60762 0 12.5C0 19.3923 5.60762 24.9999 12.5 24.9999C19.3923 24.9999 24.9999 19.3923 24.9999 12.5C24.9999 5.60762 19.3924 0 12.5 0ZM12.5 23.913C6.2065 23.913 1.08694 18.7934 1.08694 12.5C1.08694 6.2065 6.2065 1.08694 12.5 1.08694C18.7934 1.08694 23.913 6.2065 23.913 12.5C23.913 18.7934 18.7934 23.913 12.5 23.913Z" fill="#05297F"/>
 <path d="M12.4998 11.957C8.60413 11.957 5.43457 15.1266 5.43457 19.0223C5.43457 19.3223 5.67807 19.5657 5.97807 19.5657C6.27806 19.5657 6.52156 19.3222 6.52156 19.0222C6.52156 15.7255 9.20306 13.044 12.4998 13.044C15.7965 13.044 18.478 15.7255 18.478 19.0222C18.478 19.3222 18.7215 19.5657 19.0215 19.5657C19.3215 19.5657 19.565 19.3222 19.565 19.0222C19.565 15.1266 16.3955 11.957 12.4998 11.957Z" fill="#05297F"/>
@@ -97,8 +152,35 @@ const MyAppBar: React.FC = () => {
 </clipPath>
 </defs>
 </svg>
-        </Box>
-      </Toolbar>
+     </Box>
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+               
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography sx={{ textAlign: 'center'}}>{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 };

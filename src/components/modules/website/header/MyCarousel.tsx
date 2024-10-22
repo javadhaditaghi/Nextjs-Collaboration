@@ -18,7 +18,7 @@ import { Box } from '@mui/material';
 
 function MyCarousel() {
   return (
-    <Box sx={{  xs: "400px", sm: "600px", md: "800px", lg: "900px",width:"100%"}}>
+    <Box sx={{  xs: "400px", sm: "600px", md: "800px", lg: "900px",width:"100%", position:"relative"}}>
     <Swiper
     // install Swiper modules
     modules={[Navigation, Pagination, A11y]}
@@ -29,15 +29,20 @@ function MyCarousel() {
     onSwiper={(swiper) => console.log(swiper)}
     onSlideChange={() => console.log('slide change')}
   >
-    <SwiperSlide>
     
+    <SwiperSlide >
+   
     <Image
       src="/assets/images/bg.png"
       layout='responsive'
+      objectFit='cover'
+     
       width={1920}
       height={2000}
       alt="Picture of the author"
     />
+   
+    
     </SwiperSlide>
     <SwiperSlide>
     <Image
@@ -61,7 +66,7 @@ function MyCarousel() {
     
  
   </Swiper>
-  <Box sx={{
+  <Box  sx={{
           position: 'absolute',
           top: '50%',
           left: '50%',
