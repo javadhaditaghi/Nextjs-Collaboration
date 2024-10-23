@@ -8,7 +8,11 @@ import {
   categoriesItem,
   paymentMethodItem,
   socialsItem,
-} from "@/constants/constants";
+  menuTypes,
+  paymentTypes,
+  socialTypes,
+} from "@/data/footerData";
+
 const Footer = () => {
   return (
     //  footer has a Container mui component & 2 child of Grid component.
@@ -43,8 +47,8 @@ const Footer = () => {
             <Box>
               <Link href="/">
                 <Image
-                  src="/assets/images/icons/logo-trali.png"
-                  alt="logo-icon"
+                  src="/assets/images/icons/logo.png"
+                  alt="Trali store"
                   height={59}
                   width={138}
                 />
@@ -60,7 +64,7 @@ const Footer = () => {
             >
               <Box>
                 <Image
-                  src="/assets/images/icons/phone-i.png"
+                  src="/assets/images/icons/phone.png"
                   alt="phone-icon"
                   width={41}
                   height={41}
@@ -107,7 +111,7 @@ const Footer = () => {
             <Grid container sx={{ display: "flex", gap: "30px" }}>
               {/* all box component has height & width, because img of icon are not 1:1 (size) & the middle box element has margin for spacing */}
 
-              {socialsItem.map((social) => (
+              {socialsItem.map((social: socialTypes) => (
                 <Box
                   key={social.id}
                   sx={{ height: "20px", width: "20px", alignContent: "center" }}
@@ -115,7 +119,7 @@ const Footer = () => {
                   <Link href={social.href} target="_blank">
                     <Image
                       src={social.src}
-                      alt={social.alt}
+                      alt={social.title}
                       width={social.width}
                       height={social.height}
                     />
@@ -151,7 +155,7 @@ const Footer = () => {
                 gap: "5px",
               }}
             >
-              {getInTouchItems.map((item) => (
+              {getInTouchItems.map((item: menuTypes) => (
                 <li key={item.id}>
                   <Link href={item.href} target="_blank">
                     <Typography
@@ -197,7 +201,7 @@ const Footer = () => {
                 gap: "5px",
               }}
             >
-              {categoriesItem.map((category) => (
+              {categoriesItem.map((category: menuTypes) => (
                 <li key={category.id}>
                   <Link href={category.href} target="_blank">
                     <Typography
@@ -229,12 +233,12 @@ const Footer = () => {
               Payment Method
             </Typography>
             <Box sx={{ display: "flex", marginTop: "20px", gap: "20px" }}>
-              {paymentMethodItem.map((method) => (
+              {paymentMethodItem.map((method: paymentTypes) => (
                 <Box key={method.id}>
                   <Link href={method.href} target="_blank">
                     <Image
                       src={method.src}
-                      alt={method.alt}
+                      alt={method.title}
                       width={50}
                       height={50}
                     />
