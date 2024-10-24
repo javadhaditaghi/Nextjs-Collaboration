@@ -1,3 +1,5 @@
+
+
 import SignupNewsletters from "@/components/modules/website/home/signupNewsletters/SignupNewsletters";
 import { Typography, Box, Divider } from "@mui/material";
 import { Kanit } from "next/font/google";
@@ -11,11 +13,14 @@ import AboutUs from "@/components/modules/website/home/aboutUs/AboutUs";
 
 export default function Home() {
   return (
+    
+
     <>
       <SpecialOffers />
       <CallToAction />
       <AboutUs />
       <SignupNewsletters /> 
     </>
+
   );
 }
