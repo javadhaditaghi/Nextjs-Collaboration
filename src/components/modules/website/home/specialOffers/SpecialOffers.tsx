@@ -7,8 +7,8 @@ import Grid from "@mui/material/Grid2";
 const SpecialOffers = () => {
   return (
 
-    <Grid>
-      <Grid container spacing={2} sx={{ justifyContent: "center", marginBottom:"120px" }}>
+    <Grid >
+      <Grid container spacing={2}  sx={{ justifyContent: "center", marginBottom:"120px" }}>
       {/* Left side image with text  */}
         <Grid size={6}>
           <Box
