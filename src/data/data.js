@@ -34,4 +34,5 @@ export const collections = [
      description: 'Latest summer fashion trends.',
      shop: 'ShopNow',
      price: '$145' },
+
 ];

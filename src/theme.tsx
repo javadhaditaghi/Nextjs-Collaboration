@@ -1,4 +1,3 @@
-'use client';
 import { createTheme } from '@mui/material/styles';
 import { Hind } from 'next/font/google';
 
