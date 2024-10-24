@@ -15,6 +15,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Image from "next/image";
+import { Drawer, Divider } from "@mui/material";
 
 const pages = ["home", "page", "Blog", "contact"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -52,11 +53,11 @@ function MyAppBar() {
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar sx={{margin:{sx: 0, md:"0 10%"}}}>
+        <Toolbar sx={{ margin: { sx: 0, md: "0 10%" } }}>
           <Box
             sx={{
               display: "flex",
-              justifyContent: "space-between"
+              justifyContent: "space-between",
             }}
           >
             <Image
@@ -98,7 +99,13 @@ function MyAppBar() {
             </Box>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent:"end" }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "end",
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -108,28 +115,33 @@ function MyAppBar() {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
+            <Drawer
+              variant="temporary"
               id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
               keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
+              sx={{ display: { xs: "block", md: "none" }, }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+              <Box sx={{minWidth: "70vw", textAlign: 'center'}}>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  fontSize={30}   
+                  fontWeight={700}
+                  sx={{padding:"10px 0"}}       
+                >
+                  Troli
+                </Typography>
+                <Divider />
+
+                {pages.map((page) => (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography sx={{ textAlign: "center !important", textTransform:"uppercase", display:"inline-block", width:"100%" }}>{page}<Divider sx={{padding:"4px 0px"}} /></Typography>
+                  </MenuItem>
+                ))}
+              </Box>
+            </Drawer>
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -157,7 +169,6 @@ function MyAppBar() {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Box
                   sx={{
-                    
                     gap: "15px",
                     display: { xs: "none", md: "flex" },
                   }}
