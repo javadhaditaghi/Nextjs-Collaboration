@@ -10,9 +10,8 @@ const SignupNewsletters = () => {
     //= = = = = =style color newsletters = = = = = =//
     color: "#FC9D9D",
   };
-
   return (
-    <Grid
+  <Grid
       size={12}
       py={"120px"}
       width={"1920px"}
@@ -40,9 +39,9 @@ const SignupNewsletters = () => {
           sx={{
             textAlign: "center",
             fontWeight: "bold",
-            fontSize: { xs: "40px", sm: "48", md: "54px" },
+            fontSize: { xs: "40px", sm: "48px", md: "54px" },
             color: " #252525",
-            lineHeight: "60px",
+            lineHeight: { xs: "45px", sm: "50px", md: "60px" },
           }}
         >
           Sing Up For Our
@@ -68,6 +67,7 @@ const SignupNewsletters = () => {
             fontStyle: "normal",
             fontWeight: "400",
             lineHeight: "24px",
+            paddingX: { xs: "30px", sm: "20px", md: "0px" },
           }}
         >
           Sed pretium turpis id orci molestie, vitae placerat ligula vulputate.
@@ -82,6 +82,7 @@ const SignupNewsletters = () => {
           justifyContent: "center",
           margin: "auto",
           flexShrink: "0",
+          paddingX: { xs: "30px", sm: "20px", md: "0px" },
         }}
       >
         <Paper
@@ -123,7 +124,7 @@ const SignupNewsletters = () => {
         </Paper>
       </Box>
       {/* = = = = = = =End  subscribe button = = = =  = */}
-      <Newsleterscard />
+      <Newsleterscard />{" "}
       {/* = = = = = = = import cards component == = = = ==  */}
     </Grid>
   );
