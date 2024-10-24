@@ -2,7 +2,7 @@ import SvgIcon from "@mui/material/SvgIcon";
 
 export default function Trolley() {
   return (
-    <SvgIcon sx={{ width: "37px", height: "37px" }}>
+    <SvgIcon sx={{ width: {xs:"32px", md:"28px", xl:"34px"}, height: {xs:"32px", md:"28px", xl:"34px"} }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="26"

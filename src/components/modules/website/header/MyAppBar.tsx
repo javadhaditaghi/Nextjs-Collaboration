@@ -57,11 +57,12 @@ function MyAppBar() {
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar sx={{ margin: { sx: 0, md: "0 10%" } }}>
+        <Toolbar sx={{ margin: { sx: 0, md:"0 2%", lg: "0 10%" } }}>
           <Box
             sx={{
               display: "flex",
               justifyContent: "space-between",
+              alignItems:"center"
             }}
           >
             <Image
@@ -189,7 +190,7 @@ function MyAppBar() {
             </Drawer>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent:"center" }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -202,7 +203,8 @@ function MyAppBar() {
                   fontSize: "18px",
                   fontFamily: "Hind, sans-serif",
                   fontWeight: "700",
-                  marginLeft: "70px",
+                  margin: "25px 4%",
+                  textAlign:"center "
                 }}
               >
                 {page}
