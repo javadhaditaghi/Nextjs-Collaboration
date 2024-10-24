@@ -165,23 +165,23 @@ function MyAppBar() {
                   <Tooltip title="Open settings">
                     <IconButton
                       onClick={handleOpenUserMenu}
-                      sx={{ p: "0 8px" }}
+                      sx={{ p: "8px" }}
                     >
                       <Person />
                     </IconButton>
                   </Tooltip>
                   <Tooltip title="Open settings">
-                    <IconButton sx={{ p: "0 8px" }}>
+                    <IconButton sx={{ p: "8px" }}>
                       <Heart />
                     </IconButton>
                   </Tooltip>
                   <Tooltip title="Open settings">
-                    <IconButton sx={{ p: "0 8px" }}>
+                    <IconButton sx={{ p: "8px" }}>
                       <Scales />
                     </IconButton>
                   </Tooltip>
                   <Tooltip title="Open settings">
-                    <IconButton sx={{ p: "0 8px" }}>
+                    <IconButton sx={{ p: "8px" }}>
                       <Trolley />
                     </IconButton>
                   </Tooltip>
@@ -214,7 +214,7 @@ function MyAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Box sx={{ display: { xs: "none", md: "block" } }}>
               <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: "0 8px" }}>
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: "8px" }}>
                   <Box
                     sx={{
                       gap: "15px",
@@ -226,7 +226,7 @@ function MyAppBar() {
                 </IconButton>
               </Tooltip>
               <Tooltip title="Open settings">
-                <IconButton sx={{ p: "0 8px" }}>
+                <IconButton sx={{ p: "8px" }}>
                   <Box
                     sx={{
                       gap: "15px",
@@ -238,7 +238,7 @@ function MyAppBar() {
                 </IconButton>
               </Tooltip>
               <Tooltip title="Open settings">
-                <IconButton sx={{ p: "0 8px" }}>
+                <IconButton sx={{ p: "8px" }}>
                   <Box
                     sx={{
                       gap: "15px",
@@ -250,7 +250,7 @@ function MyAppBar() {
                 </IconButton>
               </Tooltip>
               <Tooltip title="Open settings">
-                <IconButton sx={{ p: "0 8px" }}>
+                <IconButton sx={{ p: "8px" }}>
                   <Box
                     sx={{
                       gap: "15px",
