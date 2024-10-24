@@ -18,7 +18,6 @@ export default function Home() {
     <Typography variant="h5">h5</Typography>
     <Typography variant="h6">h6</Typography>
     <Divider />
-
     <Typography variant="body1">body 1</Typography>
     <Typography variant="body2">body 2</Typography>
 
